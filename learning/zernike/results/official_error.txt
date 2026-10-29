@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "E:\Optical beam design_codex project\chromatix\learning\zernike\reproduce_official.py", line 60, in <module>
+    main()
+    ~~~~^^
+  File "E:\Optical beam design_codex project\chromatix\learning\zernike\reproduce_official.py", line 42, in main
+    model, state, metrics = fixed_update(model, state, data)
+                            ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "E:\Optical beam design_codex project\chromatix\learning\zernike\reproduce_official.py", line 27, in fixed_update
+    updates, state = optimizer.update(grads, state, model)
+                     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Optical beam design_codex project\chromatix\.venv\Lib\site-packages\optax\transforms\_combining.py", line 90, in update_fn
+    updates, new_s = fn(updates, s, params, **extra_args)
+                     ~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Optical beam design_codex project\chromatix\.venv\Lib\site-packages\optax\_src\base.py", line 339, in update
+    return tx.update(updates, state, params)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Optical beam design_codex project\chromatix\.venv\Lib\site-packages\optax\_src\transform.py", line 294, in update_fn
+    mu_hat = optax.tree.bias_correction(mu, b1, count_inc)
+ValueError: Cache keys should be comparable using __eq__. The following error was raised when comparing two objects of types <class 'jaxlib._jax.jax_jit.ArgumentSignature'> and <class 'jaxlib._jax.jax_jit.ArgumentSignature'>. The error was:
+ValueError: Exception raised while checking equality of metadata fields of pytree node of type <class 'ZernikePSF'>. Make sure that metadata fields are hashable and have simple equality semantics. (Note: arrays cannot be passed as metadata fields!)
+--------------------
+For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.

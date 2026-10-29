@@ -1,0 +1,38 @@
+<string>:2: UserWarning: A JAX array is being set as static! This can result in unexpected behavior and is usually a mistake to do.
+<string>:8: UserWarning: A JAX array is being set as static! This can result in unexpected behavior and is usually a mistake to do.
+<string>:19: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+E:\Optical beam design_codex project\chromatix\learning\zernike\reproduce_official.py:33: UserWarning: A JAX array is being set as static! This can result in unexpected behavior and is usually a mistake to do.
+  model = ns['ZernikePSF'](jnp.zeros(10))
+original 0 5.61949348449707
+original 100 1.3853468894958496
+original 200 0.33181649446487427
+original 300 0.12421826273202896
+original 400 0.06808494031429291
+original 500 0.0017407028935849667
+original 600 0.0017407034756615758
+original 700 0.0017407042905688286
+original 800 0.0017407045233994722
+original 900 0.0017407048726454377
+original {'initial_loss': 5.61949348449707, 'final_loss': 0.0017407052218914032, 'coefficient_mse': 6.3558172769262455e-06, 'coefficients': [0.165998637676239, 0.42599546909332275, 0.2519976794719696, 0.0019999428186565638, 0.07999928295612335, 0.002000032924115658, 0.08599946647882462, -0.0020000676158815622, 0.08599622547626495, 0.002000505104660988], 'adam_count': 0, 'seconds': 44.41381860000547}
+Traceback (most recent call last):
+  File "E:\Optical beam design_codex project\chromatix\learning\zernike\reproduce_official.py", line 60, in <module>
+    main()
+    ~~~~^^
+  File "E:\Optical beam design_codex project\chromatix\learning\zernike\reproduce_official.py", line 42, in main
+    model, state, metrics = fixed_update(model, state, data)
+                            ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "E:\Optical beam design_codex project\chromatix\learning\zernike\reproduce_official.py", line 27, in fixed_update
+    updates, state = optimizer.update(grads, state, model)
+                     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Optical beam design_codex project\chromatix\.venv\Lib\site-packages\optax\transforms\_combining.py", line 90, in update_fn
+    updates, new_s = fn(updates, s, params, **extra_args)
+                     ~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Optical beam design_codex project\chromatix\.venv\Lib\site-packages\optax\_src\base.py", line 339, in update
+    return tx.update(updates, state, params)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Optical beam design_codex project\chromatix\.venv\Lib\site-packages\optax\_src\transform.py", line 294, in update_fn
+    mu_hat = optax.tree.bias_correction(mu, b1, count_inc)
+ValueError: Cache keys should be comparable using __eq__. The following error was raised when comparing two objects of types <class 'jaxlib._jax.jax_jit.ArgumentSignature'> and <class 'jaxlib._jax.jax_jit.ArgumentSignature'>. The error was:
+ValueError: Exception raised while checking equality of metadata fields of pytree node of type <class 'ZernikePSF'>. Make sure that metadata fields are hashable and have simple equality semantics. (Note: arrays cannot be passed as metadata fields!)
+--------------------
+For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.

@@ -1,0 +1,21 @@
+{
+  "initial_loss": 0.3339400589466095,
+  "final_loss": 2.8011203382846683e-14,
+  "coefficient_rmse_um": 2.4406045184832692e-08,
+  "adam_count": 2000,
+  "gradient_relative_error": 0.00011106825157402935,
+  "shape": [
+    256,
+    256
+  ],
+  "pupil_dx_um": 1.25,
+  "image_dx_um": 0.125,
+  "jax": "0.12.0.1",
+  "devices": [
+    "cpu:0"
+  ],
+  "steps": 2000,
+  "learning_rate": 0.001,
+  "noisy_target": false,
+  "truth_scale_vs_official": 0.2
+}
